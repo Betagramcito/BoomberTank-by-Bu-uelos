@@ -8,37 +8,35 @@ public class Movimiento : MonoBehaviour
     [SerializeField] private float velocidadRotacion = 90f; 
     [SerializeField] private Vector2 direccion;
     private Rigidbody2D rb2D;
-    private float anguloRotacion = 0f; // Ángulo de rotación inicial (mirando al norte)
+    private float anguloRotacion = 0f; 
 
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        transform.rotation = Quaternion.Euler(0, 0, 0); // Asegura que el tanque inicie mirando al norte
+        transform.rotation = Quaternion.Euler(0, 0, 0); 
     }
 
     private void Update()
     {
         direccion = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
-        // Cambia el ángulo de rotación según la tecla presionada
         if (Input.GetKey(KeyCode.W))
         {
-            anguloRotacion = 0f; // Norte
+            anguloRotacion = 0f; 
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            anguloRotacion = -90f; // Este (rotación en sentido horario)
+            anguloRotacion = -90f; 
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            anguloRotacion = -180f; // Sur
+            anguloRotacion = -180f; 
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            anguloRotacion = -270f; // Oeste
+            anguloRotacion = -270f; 
         }
 
-        // Aplica la rotación al objeto
         transform.rotation = Quaternion.Euler(0, 0, anguloRotacion);
     }
 
