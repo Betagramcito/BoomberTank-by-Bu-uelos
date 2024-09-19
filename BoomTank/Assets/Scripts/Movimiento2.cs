@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movimiento : MonoBehaviour
+public class Movimiento2 : MonoBehaviour
 {
     [SerializeField] private float velocidadMovimiento;
     [SerializeField] private Vector2 direccion;
     private Rigidbody2D rb2D;
-    private float anguloRotacion = 0f; 
+    private float anguloRotacion = 0f;
 
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        transform.rotation = Quaternion.Euler(0, 0, 0); 
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void Update()
@@ -21,19 +21,19 @@ public class Movimiento : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            anguloRotacion = 0f; 
+            anguloRotacion = 0f;
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            anguloRotacion = -90f; 
+            anguloRotacion = -90f;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            anguloRotacion = -180f; 
+            anguloRotacion = -180f;
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            anguloRotacion = -270f; 
+            anguloRotacion = -270f;
         }
 
         transform.rotation = Quaternion.Euler(0, 0, anguloRotacion);
