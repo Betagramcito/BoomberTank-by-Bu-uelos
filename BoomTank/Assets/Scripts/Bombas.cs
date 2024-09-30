@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Bombas : MonoBehaviour
 {
-    public GameObject bombPrefab;
+    public GameObject bombPrefab; 
     public Transform bombSpawnPoint;
-    public float bombCooldown = 2.0f;
-    public float nextBombTime = 0f;
+    public float bombCooldown = 2.0f; 
 
-    void Start()
-    {
-        
-    }
+    private float nextBombTime = 0f;
 
-    // Update is called once per frame
+    public KeyCode teclaLanzar = KeyCode.E; 
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Time.time >= nextBombTime)
+        if (Input.GetKeyDown(teclaLanzar) && Time.time >= nextBombTime)
         {
             SpawnBomb();
             nextBombTime = Time.time + bombCooldown;
         }
     }
+
     void SpawnBomb()
     {
         Instantiate(bombPrefab, bombSpawnPoint.position, bombSpawnPoint.rotation);

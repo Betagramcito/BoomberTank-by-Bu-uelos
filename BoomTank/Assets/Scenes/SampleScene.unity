@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 264055732}
   - component: {fileID: 264055731}
   - component: {fileID: 264055733}
+  - component: {fileID: 264055735}
+  - component: {fileID: 264055734}
   m_Layer: 0
   m_Name: Tanque 3
   m_TagString: Untagged
@@ -181,8 +183,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!212 &264055732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -280,6 +282,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.38, y: 6.71}
   m_EdgeRadius: 0
+--- !u!114 &264055734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264055729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201bc2273fdd48f47a26b57b060d4963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 5948618061316709512, guid: 94c150b3c44b3164e9d2b0fdf37bd5af, type: 3}
+  bombSpawnPoint: {fileID: 264055730}
+  bombCooldown: 2
+  teclaLanzar: 111
+--- !u!114 &264055735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264055729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2125051b0c3154781507d61f56ed77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +565,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1949522557}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1340620807
 SpriteRenderer:
@@ -689,7 +720,7 @@ MonoBehaviour:
   bombPrefab: {fileID: 5948618061316709512, guid: 94c150b3c44b3164e9d2b0fdf37bd5af, type: 3}
   bombSpawnPoint: {fileID: 1340620806}
   bombCooldown: 3
-  nextBombTime: 0
+  teclaLanzar: 101
 --- !u!114 &1340620812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6224,6 +6255,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1348483105}
+  - {fileID: 1340620806}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -6233,5 +6265,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1949522557}
-  - {fileID: 1340620806}
   - {fileID: 264055730}

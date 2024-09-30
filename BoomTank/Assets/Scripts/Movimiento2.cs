@@ -4,43 +4,54 @@ using UnityEngine;
 
 public class Movimiento2 : MonoBehaviour
 {
-    [SerializeField] private float velocidadMovimiento;
-    [SerializeField] private Vector2 direccion;
+    public float velocidad = 5f;
     private Rigidbody2D rb2D;
-    private float anguloRotacion = 0f;
 
     private void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    private void Update()
+    void Update()
     {
-        direccion = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
+        Vector2 movimiento = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.I)) 
         {
-            anguloRotacion = 0f;
+            movimiento.y = 1;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.K)) 
         {
-            anguloRotacion = -90f;
+            movimiento.y = -1;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.L))
         {
-            anguloRotacion = -180f;
+            movimiento.x = 1;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.J)) 
         {
-            anguloRotacion = -270f;
+            movimiento.x = -1;
         }
 
-        transform.rotation = Quaternion.Euler(0, 0, anguloRotacion);
-    }
+        if (movimiento.y > 0) 
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0); 
+        }
+        else if (movimiento.y < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 180); 
+        }
+        else if (movimiento.x > 0) 
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -90); 
+        }
+        else if (movimiento.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 90); 
+        }
 
-    private void FixedUpdate()
-    {
-        rb2D.MovePosition(rb2D.position + direccion * velocidadMovimiento * Time.fixedDeltaTime);
+        movimiento = movimiento.normalized * velocidad * Time.deltaTime;
+
+        transform.Translate(movimiento, Space.World);
     }
 }
