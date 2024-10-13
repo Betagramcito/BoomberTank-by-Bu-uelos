@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Salud : MonoBehaviour
 {
-    public float health = 100.0f;
+    public float saludMaxima = 100f;
+   public float saludActual;
+    public float damage = 25f;
 
-    public void TakeDamage(float damage)
+    private void Start()
     {
-        health -= damage;
-        if (health <= 0)
+        saludActual = saludMaxima;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Explosion"))
         {
-            Die();
+            TakeDamage(damage); // Ajusta el valor de damage según sea necesario
         }
     }
 
-    void Die()
+    public void TakeDamage(float damage)
     {
-        Destroy(gameObject);
+        saludActual -= damage;
+
+        if (saludActual <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
