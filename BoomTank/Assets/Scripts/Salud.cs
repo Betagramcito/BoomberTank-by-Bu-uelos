@@ -13,11 +13,11 @@ public class Salud : MonoBehaviour
         saludActual = saludMaxima;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Explosion"))
         {
-            TakeDamage(damage); // Ajusta el valor de damage según sea necesario
+            TakeDamage(damage);
         }
     }
 
