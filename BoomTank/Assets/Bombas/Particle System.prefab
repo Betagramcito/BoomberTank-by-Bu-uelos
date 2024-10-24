@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8078742472611652056}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 18.45, y: -0.19547, z: -0.104677714}
   m_LocalScale: {x: 1.2652, y: 1.2652, z: 1.2652}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &7166150759111772970
 ParticleSystem:
@@ -4872,13 +4872,15 @@ ParticleSystemRenderer:
   m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
-  m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
+  m_UseCustomVertexStreams: 0
   m_VertexStreams: 00010304
+  m_UseCustomTrailVertexStreams: 0
+  m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
@@ -4896,7 +4898,6 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8078742472611652056}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4920,9 +4921,9 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
   m_Radius: 5.9
 --- !u!58 &-5722251081523825827
 CircleCollider2D:
@@ -4932,7 +4933,6 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8078742472611652056}
   m_Enabled: 1
-  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4956,7 +4956,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
   m_Radius: 0.5
