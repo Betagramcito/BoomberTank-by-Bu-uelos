@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 
-public class EscenaJugar : MonoBehaviour
+public class CambioEscena : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
