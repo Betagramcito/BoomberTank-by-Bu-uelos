@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class CambioEscena : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
+    public void LoadScene(string SampleScene)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SampleScene);
     }
 }

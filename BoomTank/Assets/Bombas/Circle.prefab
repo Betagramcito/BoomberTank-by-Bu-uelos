@@ -162,12 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d1dfd0445b3e643a120c18004655af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 1
-  explosionForce: 100
-  damage: 100
   delay: 2.57
   Particulas: {fileID: 8078742472611652056, guid: e66ba229741c1cc43b96451fc33ca0f2, type: 3}
   explosionSound: {fileID: 8300000, guid: f817c8c0542db56408197ae4e900ce3e, type: 3}
+  explosionRadius: 0.4
 --- !u!82 &6318739555306143844
 AudioSource:
   m_ObjectHideFlags: 0
